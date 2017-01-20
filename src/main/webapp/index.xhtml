@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Facelet Title</title>
+	<style type="text/css">
+.ui-panel {
+	font-size: 0.72em;
+}
+</style>
+</h:head>
+<h:body>
+
+
+
+	<h:form style="text-align: center" id="frmIngresoNumeros">
+
+		<p:panelGrid id="pnlIngresoNumeros">
+
+			<f:facet name="header">
+				<p:row>
+					<p:column colspan="8">Ingreso de Números</p:column>
+				</p:row>
+			</f:facet>
+
+			<p:row>
+				<p:column colspan="2" style="border: none">
+					<h:outputText value="Ingrese número: "></h:outputText>
+					<p:inputText value="#{data.numero}" size="10" id="numero"
+						required="true" requiredMessage="Ingrese número"></p:inputText>
+
+					<!-- 
+							<p:message for="numero"></p:message>
+						 -->
+
+
+				</p:column>
+				<p:column colspan="2" style="border: none">
+					<p:commandButton update=":frmIngresoNumeros" value="Ingresar"
+						action="#{data.ingresarNumero()}"></p:commandButton>
+				</p:column>
+				<p:column colspan="2" style="border: none">
+					<p:commandButton value="Ordenar" action="#{data.ordenarNumeros()}"
+						process="@this" update=":frmIngresoNumeros:pnlIngresoNumeros"></p:commandButton>
+				</p:column>
+				<p:column colspan="2" style="border: none">
+					<p:commandButton value="limpiar" action="#{data.limpiar()}"
+						process="@this" update=":frmIngresoNumeros:pnlIngresoNumeros"></p:commandButton>
+				</p:column>
+
+			</p:row>
+			<p:row>
+
+				<p:column colspan="8" style="border: none">
+					<h:outputText id="resultado" value="#{data.resultado}"></h:outputText>
+				</p:column>
+
+			</p:row>
+			<p:row>
+
+				<p:column colspan="8" style="border: none">
+					<p:messages id="mnsIngresoNumeros"></p:messages>
+				</p:column>
+
+			</p:row>
+		</p:panelGrid>
+
+
+	</h:form>
+
+</h:body>
+</html>
