@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.lbenvenutoc</groupId>
-	<artifactId>reto</artifactId>
+	<artifactId>ubigeo</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>reto Maven Webapp</name>
+	<version>1.0</version>
+	<name>Ubigeo Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<repositories>
 		<repository>
@@ -19,7 +19,13 @@
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
-			<version>3.3</version>
+			<version>4.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.primefaces.themes</groupId>
+			<artifactId>blitzer</artifactId>
+			<version>1.0.10</version>
 		</dependency>
 
 		<!-- JSF 2 -->
@@ -60,7 +66,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>reto</finalName>
+		<finalName>ubigeo</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
